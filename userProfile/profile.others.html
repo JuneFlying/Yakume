@@ -1,0 +1,100 @@
+<div class="row mailbox-wrapper">
+    <div class="panel-layout">
+		<div class="panel-box">
+			<div class="panel-content image-box">
+				<div class="image-content font-white">
+					<div class="meta-box meta-box-bottom">
+						<img style="max-width: 100px" src="https://yakume.xyz/img/{{user.avatar}}" alt="" class="meta-image img-bordered img-circle">
+						<h3 class="meta-heading">{{user.name}}</h3>
+						<h4 class="meta-subheading" style="color:white">{{user.email}}</h4>
+						<button class="btn btn-alt btn-hover btn-blue-alt" ng-click = "change_follow()" style="top:20px">
+							<span ng-if="you_follow && follow_you">Following each other</span>
+							<span ng-if="!you_follow && follow_you">Follow</span>
+							<span ng-if="you_follow && !follow_you">UnFollow</span>
+							<span ng-if="!you_follow && !follow_you">Follow</span>
+							<i class="glyph-icon icon-arrow-right"></i>
+						</button>
+						<br>
+						<br>
+						<br>
+						<h4 class="meta-subheading" style="color:white">Rating:</h4>
+						<div class="col-md-push-4 col-md-4">
+						<div ng-repeat="star in rating_data.stars">
+								<div class="col-md-2">
+									<img src="https://yakume.xyz/img/{{star.image_src}}" ng_click="change_rating(star.id);">
+								</div>				
+						</div>
+					</div>
+
+					</div>
+
+				</div>
+				<img src="assets/image-resources/blurred-bg/blurred-bg-13.jpg" alt="">
+			</div>
+            <div class="mrg15T mrg15B"></div>
+            <blockquote class="font-gray">
+                <p>{{user.description}}</p>
+                <small>
+                    I am at
+                    <cite title="Monarch">{{user.city}}</cite>
+                </small>
+            </blockquote>
+        </div>
+    </div>
+	
+	<div class="content-box mrg15B">
+		<div class="panel">
+			<div class="panel-body">
+				<h3 class="title-hero">
+					{{user.name}}'s Timeline
+				</h3>
+				<div class="example-box-wrapper">
+					<div class="row">
+						<div class="timeline-box timeline-box-left">
+							<div class="tl-row col-md-6">
+								<div ng-repeat="news in createnews">
+									<div class="tl-item float-right">
+										<div class="tl-icon" ng-click="goto_profie(news.user.email)" style="cursor:pointer">
+											<img style="max-width: 50px" src="https://yakume.xyz/img/{{news.user.avatar}}" alt="" class="meta-image img-bordered img-circle">
+										</div>
+										<div class="popover right">
+											<div class="arrow"></div>
+											<div class="popover-content">
+												<p class="tl-content">{{news.user.name}} {{news.action}} <a ng-click="showspecificevent(news.anevent.id)" style="cursor:pointer">{{news.anevent.title}}</a></p>
+												<div class="tl-time">
+													<i class="glyph-icon icon-clock-o"></i>
+													{{news.timeshow}}
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="tl-row col-md-6">
+								<div ng-repeat="news in reservenews">
+								
+									<div class="tl-item float-right">
+										<div class="tl-icon" ng-click="goto_profie(news.user.email)" style="cursor:pointer">
+											<img style="max-width: 50px" src="https://yakume.xyz/img/{{news.user.avatar}}" alt="" class="meta-image img-bordered img-circle">
+										</div>
+										<div class="popover right">
+											<div class="arrow"></div>
+											<div class="popover-content">
+												<p class="tl-content">{{news.user.name}} {{news.action}} <a ng-click="showspecificevent(news.anevent.id)" style="cursor:pointer">{{news.anevent.title}}</a></p>
+												<div class="tl-time">
+													<i class="glyph-icon icon-clock-o"></i>
+													{{news.timeshow}}
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>                 
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>

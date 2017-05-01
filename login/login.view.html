@@ -1,0 +1,85 @@
+    <div class="center-vertical" style="top:70px">
+        <div class="center-content row">
+
+            <div class="col-md-6 col-xs-6 center-margin">
+
+                <h3 class="text-center pad15B font-white text-transform-upr font-size-23">Yakume</h3>
+
+                <div class="content-box border-top border-red clearfix" >
+                    <div class="content-box-wrapper row">
+                        <form action="" id="login-validation" ng-submit="login()" class="col-md-7" method="">
+                            <div id="login-form">
+                                <div class="pad20A">
+
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">{{'Email address'|translate}}</label>
+                                        <div class="input-group input-group-lg">
+                                            <span class="input-group-addon bg-white font-primary">
+                                                <i class="glyph-icon icon-envelope-o"></i>
+                                            </span>
+                                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="{{'Enter email'|translate}}" ng-model="username">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">{{'Password'|translate}}</label>
+                                        <div class="input-group input-group-lg">
+                                            <span class="input-group-addon bg-white font-primary">
+                                                <i class="glyph-icon icon-unlock-alt"></i>
+                                            </span>
+                                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="{{'Enter Password'|translate}}" ng-model="password">
+                                        </div>
+                                    </div>
+
+                                    <span ng-if="notmatch == true" style="color:red" class="help-block">
+                                        The username and password you entered did not match our records. Please double-check and try again.</span>
+                                    <div class="form-group">
+                                        <p href="" ng-click="login()" class="btn btn-block btn-blue-alt">{{'Log in'|translate}}</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <a href="" ng-click="register()">{{'Sign Up'|translate}}</a>
+                                    </div>
+                                    <div class="form-group">
+                                        <a href="" ng-click="forgetPassword()">{{'Forget Password'|translate}}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="col-md-5 col-xs-12 float-right" style="height: 287px;">
+
+                            <div class="center-vertical">
+                                <div class="center-content">
+
+                                    <p style="pointer:cursor" class="btn btn-block btn-md bg-facebook">
+                                        <span class="glyph-icon icon-separator">
+                                            <i class="glyph-icon icon-facebook"></i>
+                                        </span>
+                                        <span class="button-content" ng-click="myFacebookLogin()">
+                                            {{'Login with Facebook'|translate}}
+                                        </span>
+                                    </p>
+                                    <div class="mrg10A"></div>
+                                    <a href="#" class="btn btn-block btn-md bg-twitter">
+                                        <span class="glyph-icon icon-separator">
+                                            <i class="glyph-icon icon-twitter"></i>
+                                        </span>
+                                        <span class="button-content">
+                                            {{'Login with Twitter'|translate}}
+                                        </span>
+                                    </a>
+                                    <div class="mrg10A"></div>
+                                    <a href="#" class="btn btn-block btn-md bg-google">
+                                        <span class="glyph-icon icon-separator">
+                                            <i class="glyph-icon icon-google-plus"></i>
+                                        </span>
+                                        <span class="button-content">
+                                            {{'Login with Google+'|translate}}
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

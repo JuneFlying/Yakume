@@ -1,0 +1,326 @@
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
+<div class="col-xs-12"id="sb-site">
+    
+    <div id="page-wrapper">
+        <div id="page-header" >
+    <div id="mobile-navigation">
+        <button id="nav-toggle" class="collapsed" data-toggle="collapse" data-target="#page-sidebar"><span></span></button>
+        <a href="index.html" class="logo-content-small" title="MonarchUI"></a>
+    </div>
+    <div id="header-logo" class="logo-bg" >
+        <a ui-sref="dashboard" href="#" class="logo-content-big" title="MonarchUI">
+            Monarch <i>UI</i>
+            <span>The perfect solution for user interfaces</span>
+        </a>
+        <a ui-sref="dashboard" href="#" class="logo-content-small" title="MonarchUI">
+            Monarch <i>UI</i>
+            <span>The perfect solution for user interfaces</span>
+        </a>
+        <a id="close-sidebar" title="Close sidebar" style="cursor:pointer">
+            <i class="glyph-icon icon-angle-left" id="abc" style="top: 10px; left: 10px; color:black" ></i>
+        </a>
+    </div>
+    <div id="header-nav-left">
+        <div class="user-account-btn dropdown" style="height:40px" >
+            <a href="" title="My Account" class="user-profile clearfix" data-toggle="dropdown">
+                <img width="28" height:"28" src="https://yakume.xyz/img/{{globals.currentUser.avatar}}" alt="Profile image">
+                <span style="color:black">{{globals.currentUser.username}}</span>
+                <i class="glyph-icon icon-angle-down" style="color:black"></i>
+            </a>
+            <div class="dropdown-menu float-left ">
+                <div class="box-sm">
+                    <div class="login-box clearfix">
+                        <div class="user-img">
+                            <a href="#" title="" class="change-img">Change photo</a>
+                            <img width="28" height:"28" src="https://yakume.xyz/img/{{globals.currentUser.avatar}}" alt="">
+                        </div>
+                        <div class="user-info">
+                            <span>
+                                {{username}}
+                            </span>
+                            <a ui-sref = "profile" href="#" title="Edit profile" ng-click="edit_profile()">Edit profile</a>
+                            <a href="#" title="View notifications">View notifications</a>
+                        </div>
+                    </div>
+                    
+                    <div class="pad5A button-pane button-pane-alt text-center">
+                        <a href="#" ng-click="logout()" class="btn display-block font-normal btn-danger">
+                            <i class="glyph-icon icon-power-off"></i>
+                            Logout
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- #header-nav-left -->
+
+    <div id="header-nav-right">
+        <div class="dropdown">
+            <a href="#/main/searchevents"  data-toggle="dropdown" class="hdr-btn popover-button" title="Search" style="color: #acb7c0; border: solid 2px;
+                border-radius: 4px; width:45px; height:45px; line-height: 43px;" >
+                <i class="glyph-icon icon-search" style="color:black;"></i>
+            </a>
+            <div class="hide" id="popover-search">
+                <div class="pad5A box-md">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search terms here ...">
+                        <span class="input-group-btn">
+                            <a class="btn btn-primary" href="#">Search</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="dropdown" id="notifications-btn">
+            <a data-toggle="dropdown" href="#" title="" style="border: solid 2px;
+            border-radius: 4px; width:45px; height:45px" >
+                <i class="glyph-icon icon-linecons-megaphone" style="color:black;"></i>
+            </a>
+            <div class="dropdown-menu box-md float-right">
+
+                <div class="popover-title display-block clearfix pad10A">
+                    Notifications
+                </div>
+                <div class="scrollable-content scrollable-slim-box">
+                    <ul class="no-border notifications-box">
+                        <li>
+                            <span class="bg-danger icon-notification glyph-icon icon-bullhorn"></span>
+                            <span class="notification-text">This is an error notification</span>
+                            <div class="notification-time">
+                                a few seconds ago
+                                <span class="glyph-icon icon-clock-o"></span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="bg-warning icon-notification glyph-icon icon-users"></span>
+                            <span class="notification-text font-blue">This is a warning notification</span>
+                            <div class="notification-time">
+                                <b>15</b> minutes ago
+                                <span class="glyph-icon icon-clock-o"></span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="pad10A button-pane button-pane-alt text-center">
+                    <a href="#" class="btn btn-primary" title="View all notifications">
+                        View all notifications
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="dropdown" id="dashnav-btn">
+            <a href="#" data-toggle="dropdown" data-placement="bottom" class="popover-button-header tooltip-button" title="Dashboard Quick Menu" style="border: solid 2px;
+            border-radius: 4px; width:45px; height:45px">
+                <i class="glyph-icon icon-linecons-cog" style="color:black"></i>
+            </a>
+            <div class="dropdown-menu float-right">
+                <div class="box-sm">
+                    
+                    <div class="pad5T pad5B pad10L pad10R dashboard-buttons clearfix">
+                        <a ui-sref="hotevents" href="#" class="col-md-6 btn vertical-button remove-border btn-info" title="">
+                            <span class="glyph-icon icon-separator-vertical pad0A medium">
+                                <i class="glyph-icon icon-dashboard opacity-80 font-size-20"></i>
+                            </span>
+                            HotEvents
+                        </a>
+                        <a ui-sref= "eventedit"  href="#" class="col-md-6 btn vertical-button remove-border btn-danger" title="">
+                            <span class="glyph-icon icon-separator-vertical pad0A medium">
+                                <i class="glyph-icon icon-tags opacity-80 font-size-20"></i>
+                            </span>
+                            CreateEvents
+                        </a>
+                        <a ui-sref = "myevents" href="#" class="col-md-6 btn vertical-button remove-border btn-purple" title="">
+                            <span class="glyph-icon icon-separator-vertical pad0A medium">
+                                <i class="glyph-icon icon-fire opacity-80 font-size-20"></i>
+                            </span>
+                            MyEvents
+                        </a>
+                        <a ui-sref = "profile" href="#" class="col-md-6 btn vertical-button remove-border btn-azure" title="">
+                            <span class="glyph-icon icon-separator-vertical pad0A medium">
+                                <i class="glyph-icon icon-bar-chart-o opacity-80 font-size-20"></i>
+                            </span>
+                            MyProfile
+                        </a>
+                        <a ui-sref ="searchevents" href="#" class="col-md-6 btn vertical-button remove-border btn-warning" title="">
+                            <span class="glyph-icon icon-separator-vertical pad0A medium">
+                                <i class="glyph-icon icon-code opacity-80 font-size-20"></i>
+                            </span>
+                            SearchEvents
+                        </a>
+                        <a ui-sref ="searchuser" href="#" class="col-md-6 btn vertical-button remove-border btn-warning" title="">
+                            <span class="glyph-icon icon-separator-vertical pad0A medium">
+                                <i class="glyph-icon icon-laptop opacity-80 font-size-20"></i>
+                            </span>
+                            SearchUser
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="header-btn" id="logout-btn" title="Lockscreen page example" style="border: solid 2px;
+            border-radius: 4px; width:45px; height:45px">
+            <i class="glyph-icon icon-power-off" ng-click="logout()" style="color: black"></i>
+        </a>
+
+    </div><!-- #header-nav-right -->
+
+</div>
+        <div id="page-sidebar">
+    <div class="scroll-sidebar">
+        
+
+    <ul id="sidebar-menu">
+    
+    <li class="header"><span>{{'Side bar'|translate}}</span></li>
+    <li>
+        <a ui-sref="dashboard" href="#" title="Home">
+            <i class="glyph-icon icon-linecons-note"></i>
+            <span>{{'Home'|translate}}</span>
+        </a>
+    </li>
+    <li>
+        <a ui-sref="hotevents" id="hot_events" title="Hot Events">
+            <i class="glyph-icon icon-linecons-diamond"></i>
+            <span>{{'Hot Events'|translate}}</span>
+        </a>
+    </li>
+    <li>
+        <a ui-sref="eventedit" href="#" id="create_events" title="Create Events">
+            <i class="glyph-icon icon-linecons-lightbulb"></i>
+            <span>{{'Create Events'|translate}}</span>
+        </a>
+    </li>
+    <li>
+        <a ui-sref="myevents" id="your_events" title="Your Events">
+            <i class="glyph-icon icon-linecons-wallet"></i>
+            <span>{{'My Events'|translate}}</span>
+        </a>
+    </li>
+    <li>
+        <a ui-sref="profile" href="#" id="personal_profile" title="Forms UI" ng-click="profilePage()">
+            <i class="glyph-icon icon-linecons-user"></i>
+            <span>{{'My Profile'|translate}}</span>
+        </a>
+    </li>
+    <li>
+        <a ui-sref="searchevents" id="search_events" title="Search Events">
+            <i class="glyph-icon icon-linecons-search "></i>
+            <span>{{'Search Events'|translate}}</span>
+        </a>
+        
+    </li>
+    <li>
+        <a ui-sref="searchuser" id="search_user" title="Search User">
+            <i class="glyph-icon icon-linecons-sound"></i>
+            <span>{{'Search User'|translate}}</span>
+        </a>
+        
+    </li>
+    
+    
+    
+    </ul><!-- #sidebar-menu -->
+
+
+    </div>
+</div>
+        <div id="page-content-wrapper">
+            <div id="page-content" ui-view>
+                
+                    <div class="container">
+
+
+
+
+
+                    </div>
+
+                
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- WIDGETS -->
+
+<script type="text/javascript" src="assets/bootstrap/js/bootstrap.js"></script>
+
+<!-- Bootstrap Dropdown -->
+
+<!-- <script type="text/javascript" src="assets/widgets/dropdown/dropdown.js"></script> -->
+
+<!-- Bootstrap Tooltip -->
+
+<!-- <script type="text/javascript" src="assets/widgets/tooltip/tooltip.js"></script> -->
+
+<!-- Bootstrap Popover -->
+
+<!-- <script type="text/javascript" src="assets/widgets/popover/popover.js"></script> -->
+
+<!-- Bootstrap Progress Bar -->
+
+<script type="text/javascript" src="assets/widgets/progressbar/progressbar.js"></script>
+
+<!-- Bootstrap Buttons -->
+
+<!-- <script type="text/javascript" src="assets/widgets/button/button.js"></script> -->
+
+<!-- Bootstrap Collapse -->
+
+<!-- <script type="text/javascript" src="assets/widgets/collapse/collapse.js"></script> -->
+
+<!-- Superclick -->
+
+<script type="text/javascript" src="assets/widgets/superclick/superclick.js"></script>
+
+<!-- Input switch alternate -->
+
+<script type="text/javascript" src="assets/widgets/input-switch/inputswitch-alt.js"></script>
+
+<!-- Slim scroll -->
+
+<script type="text/javascript" src="assets/widgets/slimscroll/slimscroll.js"></script>
+
+<!-- Slidebars -->
+
+<script type="text/javascript" src="assets/widgets/slidebars/slidebars.js"></script>
+<script type="text/javascript" src="assets/widgets/slidebars/slidebars-demo.js"></script>
+
+<!-- PieGage -->
+
+<script type="text/javascript" src="assets/widgets/charts/piegage/piegage.js"></script>
+<script type="text/javascript" src="assets/widgets/charts/piegage/piegage-demo.js"></script>
+
+<!-- Screenfull -->
+
+<script type="text/javascript" src="assets/widgets/screenfull/screenfull.js"></script>
+
+<!-- Content box -->
+
+<script type="text/javascript" src="assets/widgets/content-box/contentbox.js"></script>
+
+<!-- Overlay -->
+
+<script type="text/javascript" src="assets/widgets/overlay/overlay.js"></script>
+
+<!-- Widgets init for demo -->
+
+<script type="text/javascript" src="assets/js-init/widgets-init.js"></script>
+
+<!-- Theme layout -->
+
+<script type="text/javascript" src="assets/themes/admin/layout.js"></script>
+
+<!-- Theme switcher -->
+
+<script type="text/javascript" src="assets/widgets/theme-switcher/themeswitcher.js"></script>
+
+<script type="text/javascript" src="main.controller.js"></script>
+
+</div>
